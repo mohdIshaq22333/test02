@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @font-face {
     font-family: klavika;
     src: url(./assets/font/klavika-regular-webfont.woff);
@@ -10,6 +17,7 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: klavika, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     -ms-overflow-style: none;
@@ -27,57 +35,127 @@ body::-webkit-scrollbar {
     width: 100vw;
     height: 100%;
     background: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-animation: fadeOut 3s forwards ease-in 4s;
     animation: fadeOut 3s forwards ease-in 4s;
 }
 
 .avatarCont {
+    -webkit-animation: pop 0.6s ease-in-out;
     animation: pop 0.6s ease-in-out;
 }
 
 .avatar {
+    -webkit-animation: bounce 2s infinite ease-in;
     animation: bounce 2s infinite ease-in;
 }
 
-@keyframes fadeOut {
+@-webkit-keyframes fadeOut {
     0% {
+        -webkit-filter: brightness(1);
         filter: brightness(1);
     }
     30% {
+        -webkit-filter: brightness(0);
         filter: brightness(0);
     }
     70% {
         opacity: 1;
+        -webkit-filter: brightness(0);
         filter: brightness(0);
     }
     100% {
         opacity: 0;
         display: none;
         z-index: -999;
+        -webkit-filter: brightness(0);
         filter: brightness(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        -webkit-filter: brightness(1);
+        filter: brightness(1);
+    }
+    30% {
+        -webkit-filter: brightness(0);
+        filter: brightness(0);
+    }
+    70% {
+        opacity: 1;
+        -webkit-filter: brightness(0);
+        filter: brightness(0);
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        z-index: -999;
+        -webkit-filter: brightness(0);
+        filter: brightness(0);
+    }
+}
+
+@-webkit-keyframes pop {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
 }
 
 @keyframes pop {
     0% {
+        -webkit-transform: scale(0);
         transform: scale(0);
     }
     100% {
+        -webkit-transform: scale(1);
         transform: scale(1);
+    }
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+    50% {
+        -webkit-transform: translateY(-10%);
+        transform: translateY(-10%);
+    }
+    100% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
     }
 }
 
 @keyframes bounce {
     0% {
+        -webkit-transform: translateY(0%);
         transform: translateY(0%);
     }
     50% {
+        -webkit-transform: translateY(-10%);
         transform: translateY(-10%);
     }
     100% {
+        -webkit-transform: translateY(0%);
         transform: translateY(0%);
     }
 }
@@ -92,14 +170,31 @@ body::-webkit-scrollbar {
 
 .animatedText::after {
     content: "patience!";
+    -webkit-animation: animatedText 5s forwards ease-in;
     animation: animatedText 5s forwards ease-in;
+}
+
+@-webkit-keyframes animatedText {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    30% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        content: "patience, young padawan...";
+    }
 }
 
 @keyframes animatedText {
     0% {
+        -webkit-transform: scale(0);
         transform: scale(0);
     }
     30% {
+        -webkit-transform: scale(1);
         transform: scale(1);
     }
     100% {
@@ -130,6 +225,8 @@ body::-webkit-scrollbar {
 button {
     position: absolute;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -146,6 +243,8 @@ button svg {
 button svg path {
     stroke: white;
     stroke-width: 1px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
@@ -163,7 +262,11 @@ button.right {
 
 .bgImg {
     width: 670vw;
+    -webkit-transition: 0.8s;
+    -o-transition: 0.8s;
     transition: 0.8s;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
     transition-timing-function: ease-in;
     background: #000000fa;
 }
@@ -176,6 +279,8 @@ button.right {
 }
 
 .navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
     bottom: 20px;
@@ -199,6 +304,8 @@ button.right {
 }
 
 .navigation div span.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: white;
     width: 100%;
@@ -228,6 +335,8 @@ button.right {
     text-decoration: underline;
     font-size: 36px;
     opacity: 1;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
 }
 
@@ -256,7 +365,11 @@ button.right {
     font-size: 13px;
     font-family: monospace;
     opacity: 1;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
+    -webkit-transition-delay: 0.1s;
+    -o-transition-delay: 0.1s;
     transition-delay: 0.1s;
 }
 
@@ -273,6 +386,8 @@ button.right {
 }
 
 .opacity {
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
     opacity: 0;
 }
