@@ -1,0 +1,278 @@
+@font-face {
+    font-family: klavika;
+    src: url(./assets/font/klavika-regular-webfont.woff);
+}
+
+html,
+body {
+    padding: 0;
+    scroll-behavior: smooth;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: klavika, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.startAnimation {
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    height: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: fadeOut 3s forwards ease-in 4s;
+}
+
+.avatarCont {
+    animation: pop 0.6s ease-in-out;
+}
+
+.avatar {
+    animation: bounce 2s infinite ease-in;
+}
+
+@keyframes fadeOut {
+    0% {
+        filter: brightness(1);
+    }
+    30% {
+        filter: brightness(0);
+    }
+    70% {
+        opacity: 1;
+        filter: brightness(0);
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        z-index: -999;
+        filter: brightness(0);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.animatedText {
+    color: white;
+    margin-top: 40px;
+}
+
+
+/* patience, young padawan... */
+
+.animatedText::after {
+    content: "patience!";
+    animation: animatedText 5s forwards ease-in;
+}
+
+@keyframes animatedText {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1);
+    }
+    100% {
+        content: "patience, young padawan...";
+    }
+}
+
+.mainContainer {
+    width: 100vw;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
+}
+
+.sliderContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.sliderContainer {
+    width: 100vw;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9;
+    /* background: black; */
+}
+
+button svg {
+    width: 35px;
+    height: 35px;
+}
+
+button svg path {
+    stroke: white;
+    stroke-width: 1px;
+    transition: 0.3s;
+}
+
+button:hover svg path {
+    stroke: #ffffff85;
+}
+
+button.left {
+    left: 15px;
+}
+
+button.right {
+    right: 15px;
+}
+
+.bgImg {
+    width: 670vw;
+    transition: 0.8s;
+    transition-timing-function: ease-in;
+    background: #000000fa;
+}
+
+.backgroundImg {
+    width: 600vw;
+    height: auto;
+    max-height: 100vh;
+    /* opacity: 0.3; */
+}
+
+.navigation {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    border: 1px dashed;
+    font-size: 12px;
+}
+
+.navigation>div {
+    width: 20px;
+    display: block;
+    padding: 3px;
+    text-align: center;
+    border-right: 1px dashed;
+    cursor: pointer;
+}
+
+.navigation>div:last-child {
+    border-right: none;
+}
+
+.navigation div span.active {
+    display: flex;
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+
+.name {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    color: white;
+    font-size: 26px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.title {
+    position: absolute;
+    color: white;
+    z-index: 9;
+    max-width: 350px;
+    font-family: inherit;
+    font-weight: 400;
+    text-decoration: underline;
+    font-size: 36px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.title.top {
+    left: 25px;
+    top: 37px;
+}
+
+.title.left {
+    left: 80px;
+    top: 40%;
+    max-width: 410px;
+}
+
+.title.right {
+    right: 80px;
+    top: 40%;
+    max-width: 410px;
+    text-align: right;
+}
+
+.para {
+    color: white;
+    position: absolute;
+    z-index: 9;
+    font-size: 13px;
+    font-family: monospace;
+    opacity: 1;
+    transition: opacity 0.3s;
+    transition-delay: 0.1s;
+}
+
+.para.top {
+    max-width: 400px;
+    bottom: 110px;
+    left: 30px;
+}
+
+.para.left,
+.para.right {
+    bottom: 22px;
+    left: 325px;
+}
+
+.opacity {
+    transition: opacity 0.3s;
+    opacity: 0;
+}
