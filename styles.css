@@ -216,7 +216,7 @@ body::-webkit-scrollbar {
 
 .sliderContainer {
     width: 100vw;
-    overflow-x: scroll;
+    overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
     position: relative;
