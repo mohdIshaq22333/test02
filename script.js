@@ -60,13 +60,11 @@ const textArray = [{
     {
         para: "",
         title: "",
-        class: "",
+        class: "hide",
     }
 ];
-console.log(buttons);
 
 buttons.forEach(button => {
-    console.log(button);
     button.addEventListener("click", () => slide(button))
 })
 skip.forEach(skip => {
@@ -75,16 +73,11 @@ skip.forEach(skip => {
 
 function slide(button) {
     const offset = button.dataset.btn === "right" ? 1 : -1;
-    console.log(offset + num > slideValues.length);
-    console.log(slideValues.length);
-    console.log(slideValues.length);
 
     if (offset + num > slideValues.length || offset + num < 0) return;
-    console.log(num);
     prev = num;
     num += offset;
     bgImg.style.transform = `translateX(${slideValues[num]*100}vw)`;
-    console.log(num);
     activeNum(num);
     hideArrow();
     textChange();
@@ -102,8 +95,6 @@ function slide(button) {
 }
 
 function textChange() {
-    console.log(prev);
-    console.log(num);
     if (prev === num) return;
     title.classList.add("opacity");
     para.classList.add("opacity");
@@ -122,8 +113,6 @@ function textChange() {
 }
 
 function hideArrow() {
-    console.log(prev);
-    console.log(num);
     if (prev === num) return;
     if (prev === 0) {
         buttons[0].classList.remove("hide");
@@ -140,7 +129,6 @@ function hideArrow() {
 function navSlide(skip) {
     prev = num;
     num = parseInt(skip.dataset.skip);
-    console.log(num);
     bgImg.style.transform = `translateX(${slideValues[num]*100}vw)`;
     activeNum(num);
     hideArrow();
