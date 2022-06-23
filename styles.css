@@ -5,6 +5,14 @@
 * Browsers: last 4 version
 */
 
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @font-face {
     font-family: klavika;
     src: url(./assets/font/klavika-regular-webfont.woff);
@@ -268,7 +276,13 @@ button.right {
     -webkit-transition-timing-function: ease-in;
     -o-transition-timing-function: ease-in;
     transition-timing-function: ease-in;
-    background: #000000fa;
+    background: #000000f2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .backgroundImg {
@@ -276,6 +290,69 @@ button.right {
     height: auto;
     max-height: 100vh;
     /* opacity: 0.3; */
+}
+
+.infoCont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: end;
+    margin-right: 10px;
+    color: white;
+}
+
+.infoCont .block {
+    margin-top: 14vw;
+}
+
+.infoCont h2,
+.infoCont p {
+    font-weight: 200;
+    text-align: end;
+}
+
+.infoCont h2 {
+    font-size: 30px;
+    border-bottom: 1px solid;
+    padding-bottom: 4px;
+}
+
+.infoCont p {
+    font-size: 12px;
+    padding-bottom: 4px;
+}
+
+.infoCont p a {
+    color: white;
+    text-decoration: underline;
+}
+
+.platform,
+.platform .sing {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.platform .sing img {
+    width: 14px;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 5px;
 }
 
 .navigation {
