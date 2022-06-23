@@ -15,7 +15,6 @@ const textArray = [{
         title: "TALENT IS GIVEN TRUE SKILL IS EARNED",
         para: "Step 1 out of 8 on the path to digital enlightenment.",
         class: "left",
-
     },
     {
         title: "BE FLEXIBLE TO CHANGE AND STURDY IN CONVICTION",
